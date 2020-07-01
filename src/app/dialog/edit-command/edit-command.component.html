@@ -1,0 +1,29 @@
+<div class="container">
+  <h5 mat-dialog-title>Edit Command</h5>
+
+  <form class="mat-dialog-content" (ngSubmit)="submit()" #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field color="primary">
+        <input matInput placeholder="id" [(ngModel)]="data.id" disabled name="id">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="primary">
+        <input matInput placeholder="Command" [(ngModel)]="data.command" name="command">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="primary">
+        <input matInput placeholder="Description" [(ngModel)]="data.description" name="description">
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-raised-button color="primary" [type]="submit" [mat-dialog-close]="1" (click)="confirmAdd()">Save</button>
+      <button mat-raised-button color="primary" (click)="onNoClick()" tabindex="-1">Cancel</button>
+    </div>
+  </form>
+</div>

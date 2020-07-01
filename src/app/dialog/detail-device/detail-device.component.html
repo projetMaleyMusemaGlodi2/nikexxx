@@ -1,0 +1,15 @@
+
+<!-- in app.component.html -->
+<fusioncharts
+ type="angulargauge"
+ width="450"
+ height="250"
+ dataFormat="json"
+ [dataSource]="dataSource"
+></fusioncharts>
+    <p>Designation : {{data.device.designation}}</p>
+    <p>Identity : {{data.device.identity}}</p>
+    <p>Battery : {{data.tension}}</p>
+    <p>Location : [ {{data.locationLatitude}} - {{data.locationLongitude}} ]</p>
+    <p>Source : {{data.source}}</p>
+

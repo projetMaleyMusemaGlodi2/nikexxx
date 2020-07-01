@@ -1,0 +1,57 @@
+<div class="container">
+  <h5 mat-dialog-title>Edit User</h5>
+
+  <form class="mat-dialog-content" (ngSubmit)="submit()" #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field color="primary">
+        <input matInput placeholder="Id" disabled [(ngModel)]="data.id" name="id">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="primary">
+        <input matInput placeholder="PrefId" hidden [(ngModel)]="data.preference" name="preference">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="primary">
+        <input matInput placeholder="Noms" [(ngModel)]="data.noms" name="noms">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="primary">
+        <input matInput placeholder="Username" [(ngModel)]="data.username" name="username">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="primary">
+        <input matInput placeholder="Password" [(ngModel)]="data.password" name="password">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="primary">
+        <input matInput placeholder="Re-Password" [(ngModel)]="data.repassword" name="repassword">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="primary">
+          <mat-label>Role</mat-label>
+          <mat-select required name="rolename" [(ngModel)]="data.rolename">
+            <mat-option value="admin">Admin</mat-option>
+            <mat-option value="user">User</mat-option>
+          </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-raised-button color="primary" [type]="submit" [mat-dialog-close]="1" (click)="confirmAdd()">Update</button>
+      <button mat-raised-button color="primary" (click)="onNoClick()" tabindex="-1">Cancel</button>
+    </div>
+  </form>
+</div>

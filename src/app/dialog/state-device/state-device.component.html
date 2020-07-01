@@ -1,0 +1,28 @@
+<div class="container">
+  <h6 mat-dialog-title>Device Actual State</h6>
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <div fxFlex="100">
+      <div id="frugalmap">
+
+      </div>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <div fxFlex="50">
+        <fusioncharts
+        type="angulargauge"
+        width="400"
+        height="200"
+        dataFormat="json"
+        [dataSource]="dataSourceChart"
+      ></fusioncharts>
+    </div>
+    <div fxFlex="50">
+      <p>Identity : {{data.measure.device.identity}}</p>
+      <p>Designation : {{data.measure.device.designation}}</p>
+      <p>Location : [ {{data.measure.locationLatitude}} - {{data.measure.locationLongitude}} ]</p>
+      <p>Source : {{data.measure.source}}</p>
+      <p>Last Update : {{data.measure.time}}</p>
+    </div>
+  </div>
+</div>

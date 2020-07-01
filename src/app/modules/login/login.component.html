@@ -1,0 +1,20 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+   <mat-card fxFlex="25">
+     <div  fxLayoutAlign="center" fxFlexFill>
+       <mat-icon>person_outline</mat-icon>
+     </div>
+     <form fxLayoutAlign="stretch" fxLayout="column" #f="ngForm" (ngSubmit)="onLogin(f.value)">
+       <mat-form-field class="example-full-width">
+         <mat-label>Username</mat-label>
+         <input matInput placeholder="Username" required autocomplete="off" ngModel name="username">
+       </mat-form-field>
+
+       <mat-form-field class="example-full-width">
+         <mat-label>Password</mat-label>
+         <input matInput type="password" required placeholder="Password" ngModel name="password">
+       </mat-form-field>
+       <button type="submit" mat-button mat-raised-button color="primary">Login</button>
+       <br>
+     </form>
+   </mat-card>
+</div>

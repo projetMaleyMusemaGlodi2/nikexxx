@@ -1,0 +1,38 @@
+<div class="container">
+  <h5 mat-dialog-title>Send Command to Device</h5>
+
+  <form class="mat-dialog-content" (ngSubmit)="submit()" #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field color="primary">
+        <input matInput placeholder="Identity" disabled [(ngModel)]="data.identity" name="externalId">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="primary">
+        <input matInput placeholder="Designation" disabled [(ngModel)]="data.designation" name="designation">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="primary">
+          <mat-label>Command</mat-label>
+          <mat-select required name="command" [(ngModel)]="data.command">
+            <mat-option *ngFor="let com of commands" [value]=com.command>{{com.command}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="primary">
+        <input matInput placeholder="Value" [(ngModel)]="data.value" name="value">
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-raised-button color="primary" [type]="submit" [mat-dialog-close]="1" (click)="confirmAdd()">Send</button>
+      <button mat-raised-button color="primary" (click)="onNoClick()" tabindex="-1">Cancel</button>
+    </div>
+  </form>
+</div>

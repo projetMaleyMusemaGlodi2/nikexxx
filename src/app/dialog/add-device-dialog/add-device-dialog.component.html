@@ -1,0 +1,29 @@
+<div class="container">
+  <h5 mat-dialog-title>Add new Device</h5>
+
+  <form class="mat-dialog-content" (ngSubmit)="submit()" #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field color="primary">
+        <input matInput placeholder="ExternalID" [(ngModel)]="data.externalId" name="externalId">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="primary">
+        <input matInput placeholder="Identity" [(ngModel)]="data.identity" name="identity">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="primary">
+        <input matInput placeholder="Designation" [(ngModel)]="data.designation" name="designation">
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-raised-button color="primary" [type]="submit" [mat-dialog-close]="1" (click)="confirmAdd()">Save</button>
+      <button mat-raised-button color="primary" (click)="onNoClick()" tabindex="-1">Cancel</button>
+    </div>
+  </form>
+</div>
